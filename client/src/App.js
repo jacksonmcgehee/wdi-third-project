@@ -22,14 +22,16 @@ class App extends Component {
   render() {
 
     const UserPageComponent = () => (<UserPage users={this.state.users} {...this.props}/>)
-  
+    const SubjectShowComponent = () => (<SubjectShow />)
+
+
     return (
       <Router>
         <Switch>
           <Route exact path='/' component={HomePage}/>
           <Route exact path='/users' render={UserPageComponent}/>
           <Route exact path='/users/:userId' component={UserShow}/>
-          <Route exact path='/users/:userId/subjects/:subjectId' conponent={SubjectShow} />
+          <Route exact path='/users/:userId/subjects/:subjectId' render={SubjectShowComponent} />
         </Switch>
       </Router>
     )
