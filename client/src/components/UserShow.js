@@ -6,7 +6,8 @@ import SubjectList from './SubjectList'
 class UserShow extends Component {
 
     state = {
-        user: {}
+        user: {},
+        subjects: []
     }
 
     componentWillMount () {
@@ -14,17 +15,19 @@ class UserShow extends Component {
           const { userId } = this.props.match.params
           axios.get(`/api/users/${userId}`)
           .then(res => {
-            this.setState({user: res.data})
+            this.setState({user: res.data, subjects: res.data.subjects})
           })
         }
       }
 
 
     render() {
+
         return (
             <div>
                 {this.state.user.userName}
-                <SubjectList subjects={this.state.user.subjects} />
+                {this.state.user.email}
+                <SubjectList subjects={this.state.subjects} />
             </div>
         )
     }
