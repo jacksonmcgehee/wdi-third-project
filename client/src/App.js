@@ -22,7 +22,7 @@ class App extends Component {
   render() {
 
     const UserPageComponent = () => (<UserPage users={this.state.users} {...this.props}/>)
-    const SubjectShowComponent = () => (<SubjectShow />)
+    // const SubjectShowComponent = () => (<SubjectShow />)
 
 
     return (
@@ -31,7 +31,7 @@ class App extends Component {
           <Route exact path='/' component={HomePage}/>
           <Route exact path='/users' render={UserPageComponent}/>
           <Route exact path='/users/:userId' component={UserShow}/>
-          <Route exact path='/users/:userId/subjects/:subjectId' render={SubjectShowComponent} />
+          <Route exact path='/users/:userId/subjects/:subjectId' component={SubjectShow} />
         </Switch>
       </Router>
     )
