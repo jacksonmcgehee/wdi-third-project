@@ -27,7 +27,7 @@ class UserShow extends Component {
             <div>
                 {this.state.user.userName}
                 {this.state.user.email}
-                <SubjectList subjects={this.state.subjects} />
+                <SubjectList subjects={this.state.subjects} userId={this.state.user._id}/>
             </div>
         )
     }

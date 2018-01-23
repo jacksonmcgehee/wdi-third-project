@@ -6,6 +6,7 @@ import axios from 'axios'
 import HomePage from './components/HomePage'
 import UserPage from './components/UserPage'
 import UserShow from './components/UserShow'
+import SubjectShow from './components/SubjectShow'
 
 class App extends Component {
 
@@ -21,13 +22,14 @@ class App extends Component {
   render() {
 
     const UserPageComponent = () => (<UserPage users={this.state.users} {...this.props}/>)
-    // const UserShowComponent = () => (<UserShow/>)
+  
     return (
       <Router>
         <Switch>
           <Route exact path='/' component={HomePage}/>
           <Route exact path='/users' render={UserPageComponent}/>
           <Route exact path='/users/:userId' component={UserShow}/>
+          <Route exact path='/users/:userId/subjects/:subjectId' conponent={SubjectShow} />
         </Switch>
       </Router>
     )

@@ -11,9 +11,7 @@ const SubjectList = (props) => {
                 props.subjects.map((subject) => {
                 return (
                     <div>
-                        Hello from the subject list.
-                    
-                    <SubjectPreview subject={subject} {...props} key={subject._id}/>
+                        <SubjectPreview subject={subject} {...props} key={subject._id} userId={props.userId}/>
                     </div>
                 )
                 })
