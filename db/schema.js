@@ -28,7 +28,7 @@ const SubjectSchema = new Schema(
             required: true
         },
         testDate: {
-            type: String,
+            type: Date,
             required: false
         },
         flashCards: [FlashCardSchema]
