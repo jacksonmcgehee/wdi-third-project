@@ -1,11 +1,12 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React from 'react'
+import PropTypes from 'prop-types'
+import NewUserForm from './NewUserForm'
 
-class Modal extends React.Component {
+class NewUserModal extends React.Component {
   render() {
     // Render nothing if the "show" prop is false
     if(!this.props.show) {
-      return null;
+      return null
     }
 
     // The gray background
@@ -17,7 +18,7 @@ class Modal extends React.Component {
       right: 0,
       backgroundColor: 'rgba(0,0,0,0.3)',
       padding: 50
-    };
+    }
 
     // The modal "window"
     const modalStyle = {
@@ -27,29 +28,28 @@ class Modal extends React.Component {
       minHeight: 300,
       margin: '0 auto',
       padding: 30
-    };
+    }
 
     return (
       <div className="backdrop"  style={backdropStyle}> 
         <div className="modal" style={modalStyle}>
-          {this.props.children}
-          Hello from the modal.
+          Enter a new user.
+          
+          <NewUserForm 
+          addUser={this.props.addUser}/>
 
           <div className="footer">
-            <button onClick={this.props.onClose}>
-              Submit
-            </button>
+            
           </div>
         </div>
       </div>
-    );
+    )
   }
 }
 
-Modal.propTypes = {
-  onClose: PropTypes.func.isRequired,
+NewUserModal.propTypes = {
   show: PropTypes.bool,
   children: PropTypes.node
-};
+}
 
-export default Modal;
+export default NewUserModal

@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import {Link} from 'react-router-dom'
 import axios from 'axios'
 import UserList from './UserList'
-import Modal from './TestModal'
+import NewUserModal from './NewUserModal'
 
 class UserPage extends Component {
 
@@ -22,6 +22,18 @@ class UserPage extends Component {
         this.setState({users: response.data})
     }
 
+    addUser = (event) => {
+        event.preventDefault()
+        const newUser = this.state.newUser
+        axios.post(`/api/users`, {
+            user: newUser
+        }).then(() => {
+            this.props.toggleModal()
+        })
+      }
+
+    
+
     render() {
         return (
             <div>
@@ -35,8 +47,10 @@ class UserPage extends Component {
                         Add a New User
                     </button>
 
-                    <Modal show={this.state.isOpen}
-                        onClose={this.toggleModal} />
+                    <NewUserModal 
+                        show={this.state.isOpen}
+                        addUser={this.addUser}
+                        toggleModal={this.toggleModal} />
                 </div>
 
                 <div>
