@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import axios from 'axios'
-import FlashCardList from './FlashCardList'
+import FlashCardList from './flashCardComponents/FlashCardList'
 
 class SubjectShow extends Component {
     state = {

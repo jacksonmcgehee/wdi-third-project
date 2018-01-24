@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 //import {Link} from 'react-router-dom'
 import axios from 'axios'
-import SubjectList from './SubjectList'
-import EditUserModal from './EditUserModal'
+import SubjectList from './subjectComponents/SubjectList'
+import EditUserModal from './userComponents/EditUserModal'
 
 class UserShow extends Component {
 
@@ -28,6 +28,18 @@ class UserShow extends Component {
         }
       }
 
+    updateUser = (updatedUser) => {
+        const userId = this.state.user._id
+        axios.patch(`/api/users/${userId}/edit`, {
+            user: updatedUser
+        }).then((res) => {
+            const resUser = res.data
+            this.setState({user: resUser})
+        }).then(() => {
+            this.toggleModal()
+        })
+    }
+
     
 
     render() {
@@ -50,7 +62,8 @@ class UserShow extends Component {
 
                     <EditUserModal 
                         show={this.state.isOpen}
-                        user={this.state.user} />
+                        user={this.state.user} 
+                        updateUser={this.up}/>
                 </div>
                 <SubjectList 
                 subjects={this.state.subjects} 

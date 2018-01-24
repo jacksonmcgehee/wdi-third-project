@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import EditUserForm from './EditUserForm'
+import EditUserForm from './userComponents/EditUserForm'
 
 class EditUserModal extends React.Component {
   render() {
@@ -36,7 +36,8 @@ class EditUserModal extends React.Component {
           Edit {this.props.user.userName}
           
           <EditUserForm 
-          user={this.props.user} />
+          user={this.props.user} 
+          updateUser={this.props.updateUser}/>
 
           <div className="footer">
             

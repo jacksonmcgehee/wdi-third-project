@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import UserPreview from './UserPreview'
+import UserPreview from './userComponents/UserPreview'
 
 class UserList extends Component {
 

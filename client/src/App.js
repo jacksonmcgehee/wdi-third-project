@@ -3,9 +3,9 @@ import './App.css'
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom'
 
 import HomePage from './components/HomePage'
-import UserPage from './components/UserPage'
-import UserShow from './components/UserShow'
-import SubjectShow from './components/SubjectShow'
+import UserPage from './components/userComponents/UserPage'
+import UserShow from './components/userComponents/UserShow'
+import SubjectShow from './components/subjectComponents/SubjectShow'
 
 class App extends Component {
 
