@@ -63,7 +63,8 @@ class UserShow extends Component {
                     <EditUserModal 
                         show={this.state.isOpen}
                         user={this.state.user} 
-                        updateUser={this.up}/>
+                        updateUser={this.up}
+                        toggleModal={this.toggleModal}/>
                 </div>
                 <SubjectList 
                 subjects={this.state.subjects} 
