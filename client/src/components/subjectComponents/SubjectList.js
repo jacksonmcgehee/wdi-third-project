@@ -1,5 +1,5 @@
 import React from 'react'
-import SubjectPreview from './subjectComponents/SubjectPreview'
+import SubjectPreview from './SubjectPreview'
 
 const SubjectList = (props) => {
 

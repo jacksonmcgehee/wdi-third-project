@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import NewUserForm from './userComponents/NewUserForm'
+import NewUserForm from './NewUserForm'
 
 class NewUserModal extends React.Component {
   render() {

@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 //import {Link} from 'react-router-dom'
 import axios from 'axios'
-import SubjectList from './subjectComponents/SubjectList'
-import EditUserModal from './userComponents/EditUserModal'
+import SubjectList from '../subjectComponents/SubjectList'
+import EditUserModal from './EditUserModal'
 
 class UserShow extends Component {
 

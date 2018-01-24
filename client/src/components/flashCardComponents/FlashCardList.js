@@ -1,5 +1,5 @@
 import React from 'react'
-import FlashCardPreview from './flashCardComponents/FlashCardPreview'
+import FlashCardPreview from './FlashCardPreview'
 
 const FlashCardList = (props) => {
 

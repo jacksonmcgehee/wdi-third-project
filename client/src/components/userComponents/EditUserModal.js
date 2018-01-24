@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import EditUserForm from './userComponents/EditUserForm'
+import EditUserForm from './EditUserForm'
 
 class EditUserModal extends React.Component {
   render() {

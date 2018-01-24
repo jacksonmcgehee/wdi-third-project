@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 import {Link} from 'react-router-dom'
 import axios from 'axios'
-import UserList from './userComponents/UserList'
-import NewUserModal from './userComponents/NewUserModal'
+import UserList from './UserList'
+import NewUserModal from './NewUserModal'
 
 class UserPage extends Component {
 
