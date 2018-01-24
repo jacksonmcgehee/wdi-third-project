@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import axios from 'axios'
+import FlashCardList from './FlashCardList'
 
 class SubjectShow extends Component {
     state = {
@@ -20,12 +21,15 @@ class SubjectShow extends Component {
 
 
     render() {
-
+        const params = this.props.match.params
+        // const subjectId = this.props.match.params
         return (
             <div>
                 Hello again.
                 {this.state.subject.name}
-            
+                <FlashCardList 
+                flashCards={this.state.flashCards} 
+                params={params}/>
             </div>
         )
     }

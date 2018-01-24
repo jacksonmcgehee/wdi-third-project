@@ -9,7 +9,10 @@ const UserList = (props) => {
             {
                 props.users.map((user) => {
                 return (
-                    <UserPreview user={user} {...props} key={user._id}/>
+                    <UserPreview 
+                    user={user} 
+                    {...props} 
+                    key={user._id}/>
                 )
                 })
             }

@@ -5,7 +5,11 @@ const SubjectPreview = (props) => {
    
     return (
         <div>
-            <Link to={`/users/${props.userId}/subjects/${props.subject._id}`} >{props.subject.name}</Link>
+            <Link 
+            to={`/users/${props.userId}/subjects/${props.subject._id}`} 
+            key={props.subject._id}>
+            {props.subject.name}
+            </Link>
         </div>
     )
 }

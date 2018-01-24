@@ -10,8 +10,12 @@ const SubjectList = (props) => {
             {
                 props.subjects.map((subject) => {
                 return (
-                    <div>
-                        <SubjectPreview subject={subject} {...props} key={subject._id} userId={props.userId}/>
+                    <div key={subject._id}>
+                        <SubjectPreview 
+                        subject={subject} 
+                        {...props} 
+                         
+                        userId={props.userId}/>
                     </div>
                 )
                 })
