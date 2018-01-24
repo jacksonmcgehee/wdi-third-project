@@ -28,4 +28,13 @@ router.get('/:userId', (req, res) => {
     })
 })
 
+router.delete('/:userId', (req, res) => {
+    User.findById(req.params.userId)
+    .then((users) => {
+        res.json(users)
+    }).catch((error) => {
+        console.log(error)
+    })
+})
+
 module.exports = router

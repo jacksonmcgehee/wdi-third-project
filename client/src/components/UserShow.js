@@ -20,13 +20,21 @@ class UserShow extends Component {
         }
       }
 
+   
 
     render() {
 
         return (
             <div>
-                {this.state.user.userName}
-                {this.state.user.email}
+                <div>
+                    {this.state.user.userName}
+                </div>
+                <div>
+                    {this.state.user.email}
+                </div>
+                {/* <div>
+                    <button onClick="">Delete</button>
+                </div> */}
                 <SubjectList 
                 subjects={this.state.subjects} 
                 userId={this.state.user._id}/>

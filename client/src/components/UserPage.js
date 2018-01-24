@@ -22,17 +22,27 @@ class UserPage extends Component {
         this.setState({users: response.data})
     }
 
-    addUser = (event) => {
-        event.preventDefault()
-        const newUser = this.state.newUser
+    addUser = (newUser) => {
         axios.post(`/api/users`, {
             user: newUser
+        }).then((res) => {
+            const users = [...this.state.users]
+            users.unshift(res.data)
+            this.setState({users: users})
         }).then(() => {
-            this.props.toggleModal()
+            this.toggleModal()
         })
       }
 
-    
+    deleteUser () {
+        if (this.props.match.params) {
+            const { userId } = this.props.match.params
+            axios.delete(`/api/users/${userId}`)
+            .then(res => {
+                this.setState({users: res.data})
+            })
+        }
+    }
 
     render() {
         return (
@@ -49,12 +59,13 @@ class UserPage extends Component {
 
                     <NewUserModal 
                         show={this.state.isOpen}
-                        addUser={this.addUser}
-                        toggleModal={this.toggleModal} />
+                        addUser={this.addUser} />
                 </div>
 
                 <div>
-                    <UserList users={this.state.users} />
+                    <UserList 
+                    users={this.state.users} 
+                    deleteUser={this.deleteUser}/>
                 </div>
             </div>
         )

@@ -10,6 +10,7 @@ const UserPreview = (props) => {
             key={props.user._id}>
             {props.user.userName}
             </Link>
+            <
             
         </div>
     )

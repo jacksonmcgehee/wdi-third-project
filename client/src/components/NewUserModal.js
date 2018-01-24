@@ -36,7 +36,7 @@ class NewUserModal extends React.Component {
           Enter a new user.
           
           <NewUserForm 
-          addUser={this.props.addUser}/>
+          addUser={this.props.addUser} />
 
           <div className="footer">
             

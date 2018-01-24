@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import axios from 'axios'
 
 class NewUserForm extends Component {
 
@@ -27,7 +26,7 @@ class NewUserForm extends Component {
     render() {
         return(
             <div>
-                <form onSubmit={this.addNewUser}>
+                <form onSubmit={this.addNewUser} >
                     <div><input type="text" name="userName" placeholder="User Name" onChange={this.handleNewUserChange} /></div>
                     <div><input type="text" name="firstName" placeholder="First Name" onChange={this.handleNewUserChange} /></div>
                     <div><input type="text" name="lastName" placeholder="Last Name" onChange={this.handleNewUserChange} /></div>

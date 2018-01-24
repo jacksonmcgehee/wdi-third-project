@@ -1,23 +1,25 @@
-import React from 'react'
+import React, { Component } from 'react'
 import UserPreview from './UserPreview'
 
-const UserList = (props) => {
+class UserList extends Component {
 
+    render() {
 
-    return (
-        <div>
-            {
-                props.users.map((user) => {
-                return (
-                    <UserPreview 
-                    user={user} 
-                    {...props} 
-                    key={user._id}/>
-                )
-                })
-            }
-        </div>
-    )
+        const userPreview = this.props.users.map((user) => {
+            return (
+                <UserPreview 
+                user={user} 
+                key={user._id}
+                deleteUser={this.props.deleteUser}/>
+            )
+            })
+
+        return (
+            <div>
+                { userPreview }
+            </div>
+        )
+    }
 }
 
 export default UserList
