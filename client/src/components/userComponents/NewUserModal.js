@@ -39,7 +39,8 @@ class NewUserModal extends React.Component {
           addUser={this.props.addUser} />
 
           <div className="footer">
-            
+            <button onClick={() => {this.props.toggleModal()}}>Cancel</button>
+
           </div>
         </div>
       </div>
