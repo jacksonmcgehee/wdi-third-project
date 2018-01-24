@@ -29,9 +29,9 @@ router.get('/:userId', (req, res) => {
 })
 
 router.delete('/:userId', (req, res) => {
-    User.findById(req.params.userId)
-    .then((users) => {
-        res.json(users)
+    User.findByIdAndRemove(req.params.userId)
+    .then(() => {
+        res.sendStatus(200)
     }).catch((error) => {
         console.log(error)
     })

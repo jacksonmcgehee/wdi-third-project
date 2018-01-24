@@ -10,7 +10,10 @@ const UserPreview = (props) => {
             key={props.user._id}>
             {props.user.userName}
             </Link>
-            <
+            <input 
+            type="submit" 
+            value="Delete User" 
+            onClick={() => {props.deleteUser(props.user)}}></input>
             
         </div>
     )

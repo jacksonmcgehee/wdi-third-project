@@ -34,15 +34,13 @@ class UserPage extends Component {
         })
       }
 
-    deleteUser () {
-        if (this.props.match.params) {
-            const { userId } = this.props.match.params
-            axios.delete(`/api/users/${userId}`)
-            .then(res => {
-                this.setState({users: res.data})
+    deleteUser = (user) => {
+        const userId = user._id
+        axios.delete(`/api/users/${userId}`)
+            .then(() => {
+                this.componentWillMount()
             })
         }
-    }
 
     render() {
         return (
