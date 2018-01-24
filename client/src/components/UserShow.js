@@ -2,12 +2,20 @@ import React, { Component } from 'react'
 //import {Link} from 'react-router-dom'
 import axios from 'axios'
 import SubjectList from './SubjectList'
+import EditUserModal from './EditUserModal'
 
 class UserShow extends Component {
 
     state = {
         user: {},
-        subjects: []
+        subjects: [],
+        isOpen: false
+    }
+
+    toggleModal = () => {
+        this.setState({
+        isOpen: !this.state.isOpen
+        })
     }
 
     componentWillMount () {
@@ -20,7 +28,7 @@ class UserShow extends Component {
         }
       }
 
-   
+    
 
     render() {
 
@@ -35,6 +43,15 @@ class UserShow extends Component {
                 {/* <div>
                     <button onClick="">Delete</button>
                 </div> */}
+                <div>
+                    <button onClick={this.toggleModal}>
+                        Edit {this.state.user.userName}
+                    </button>
+
+                    <EditUserModal 
+                        show={this.state.isOpen}
+                        user={this.state.user} />
+                </div>
                 <SubjectList 
                 subjects={this.state.subjects} 
                 userId={this.state.user._id}/>

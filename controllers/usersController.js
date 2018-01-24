@@ -37,4 +37,13 @@ router.delete('/:userId', (req, res) => {
     })
 })
 
+router.patch('/:userId/edit', (req, res) => {
+    User.findByIdAndUpdate(req.params.userId, req.body)
+    .then((user) => {
+        res.json(user)
+    }).catch((error) => {
+        console.log(error)
+    })
+})
+
 module.exports = router
