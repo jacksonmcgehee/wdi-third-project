@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import SubmitButton from '../styledComponents/SubmitButton'
 
 class NewUserForm extends Component {
 
@@ -31,7 +32,7 @@ class NewUserForm extends Component {
                     <div><input type="text" name="firstName" placeholder="First Name" onChange={this.handleNewUserChange} /></div>
                     <div><input type="text" name="lastName" placeholder="Last Name" onChange={this.handleNewUserChange} /></div>
                     <div><input type="text" name="email" placeholder="Email" onChange={this.handleNewUserChange} /></div>
-                    <div><input type="submit" value="Create New User" /></div>
+                    <div><SubmitButton type="submit" value="Create" /></div>
                 </form>
             </div>
         )
