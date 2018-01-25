@@ -1,5 +1,8 @@
 import React, { Component } from 'react'
+
 import SubmitButton from '../styledComponents/SubmitButton'
+import ModalForm from '../styledComponents/ModalForm'
+import FormInput from '../styledComponents/FormInput'
 
 class NewUserForm extends Component {
 
@@ -27,13 +30,13 @@ class NewUserForm extends Component {
     render() {
         return(
             <div>
-                <form onSubmit={this.addNewUser} >
-                    <div><input type="text" name="userName" placeholder="User Name" onChange={this.handleNewUserChange} /></div>
-                    <div><input type="text" name="firstName" placeholder="First Name" onChange={this.handleNewUserChange} /></div>
-                    <div><input type="text" name="lastName" placeholder="Last Name" onChange={this.handleNewUserChange} /></div>
-                    <div><input type="text" name="email" placeholder="Email" onChange={this.handleNewUserChange} /></div>
+                <ModalForm onSubmit={this.addNewUser} >
+                    <div><FormInput type="text" name="userName" placeholder="User Name" onChange={this.handleNewUserChange} /></div>
+                    <div><FormInput type="text" name="firstName" placeholder="First Name" onChange={this.handleNewUserChange} /></div>
+                    <div><FormInput type="text" name="lastName" placeholder="Last Name" onChange={this.handleNewUserChange} /></div>
+                    <div><FormInput type="text" name="email" placeholder="Email" onChange={this.handleNewUserChange} /></div>
                     <div><SubmitButton type="submit" value="Create" /></div>
-                </form>
+                </ModalForm>
             </div>
         )
     }

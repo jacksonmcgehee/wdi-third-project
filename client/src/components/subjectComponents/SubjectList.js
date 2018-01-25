@@ -1,12 +1,14 @@
 import React from 'react'
 import SubjectPreview from './SubjectPreview'
 
+import ListContainer from '../styledComponents/ListContainer'
+
 const SubjectList = (props) => {
 
 
     return (
-        <div>
-            Hello from the subject list.
+        <ListContainer>
+            <h3 className="modal-title-text">{props.userName}'s Subjects</h3>
             {
                 props.subjects.map((subject) => {
                 return (
@@ -20,7 +22,7 @@ const SubjectList = (props) => {
                 )
                 })
             }
-        </div>
+        </ListContainer>
     )
 }
 

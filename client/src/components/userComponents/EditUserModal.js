@@ -2,6 +2,8 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import EditUserForm from './EditUserForm'
 
+import CancelButton from '../styledComponents/CancelButton'
+
 class EditUserModal extends React.Component {
   render() {
     // Render nothing if the "show" prop is false
@@ -33,14 +35,14 @@ class EditUserModal extends React.Component {
     return (
       <div className="backdrop"  style={backdropStyle}> 
         <div className="modal" style={modalStyle}>
-          Edit {this.props.user.userName}
+          <h3 className="modal-title-text">Edit {this.props.user.userName}</h3>
           
           <EditUserForm 
           user={this.props.user} 
           updateUser={this.props.updateUser}/>
 
           <div className="footer">
-          <button onClick={() => {this.props.toggleEditModal()}}>Cancel</button>
+            <CancelButton onClick={() => {this.props.toggleEditModal()}}>Cancel</CancelButton>
           </div>
         </div>
       </div>

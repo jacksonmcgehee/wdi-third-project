@@ -42,7 +42,7 @@ class UserPage extends Component {
             user: newUser
         }).then((res) => {
             const users = [...this.state.users]
-            users.unshift(res.data)
+            users.push(res.data)
             this.setState({users: users})
         }).then(() => {
             this.toggleModal()

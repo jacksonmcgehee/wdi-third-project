@@ -1,8 +1,15 @@
 import React, { Component } from 'react'
-//import {Link} from 'react-router-dom'
+import {Link} from 'react-router-dom'
 import axios from 'axios'
 import SubjectList from '../subjectComponents/SubjectList'
 import EditUserModal from './EditUserModal'
+
+import MainContainer from '../styledComponents/MainContainer'
+import ImgContainer from '../styledComponents/ImgContainer'
+import Img from '../styledComponents/Img'
+import PageTitle from '../styledComponents/PageTitle'
+import CenterContainer from '../styledComponents/CenterContainer'
+import BasicFooter from '../styledComponents/BasicFooter'
 
 class UserShow extends Component {
 
@@ -51,21 +58,24 @@ class UserShow extends Component {
     render() {
 
         return (
-            <div>
-                <div>
-                    {this.state.user.userName}
+            <MainContainer>
+                <div className="basic-header" >
+                    <h2 className="header-text" >Due Point</h2>
                 </div>
+                <ImgContainer>
+                    <Img src="/images/bw-stacks.jpg" />
+                    <PageTitle>
+                        <h2 className="page-title-text" >{this.state.user.userName}</h2>
+                    </PageTitle>
+                </ImgContainer>
+                <CenterContainer>
+                    <SubjectList 
+                    subjects={this.state.subjects}
+                    userName={this.state.user.userName} 
+                    userId={this.state.user._id}/>
+                </CenterContainer>
                 <div>
-                    {this.state.user.email}
-                </div>
-                {/* <div>
-                    <button onClick="">Delete</button>
-                </div> */}
-                <div>
-                    <button onClick={this.toggleEditModal}>
-                        Edit {this.state.user.userName}
-                    </button>
-
+                    
                     <EditUserModal 
                         show={this.state.isOpenEdit}
                         user={this.state.user} 
@@ -75,10 +85,13 @@ class UserShow extends Component {
                     {/* <AddSubjectModal /> */}
 
                 </div>
-                <SubjectList 
-                subjects={this.state.subjects} 
-                userId={this.state.user._id}/>
-            </div>
+                <BasicFooter>
+                    <Link to='/' className="fa fa-home fa-2x router-link" aria-hidden="true" ></Link>
+                    <Link to='/users' className="fa fa-arrow-left fa-2x router-link" aria-hidden="true"></Link>
+                    <i className="fa fa-pencil fa-2x" aria-hidden="true" onClick={this.toggleEditModal}></i>
+                    <i className="fa fa-plus fa-2x" aria-hidden="true" ></i>
+                </BasicFooter>
+            </MainContainer>
         )
     }
 }
