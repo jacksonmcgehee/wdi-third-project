@@ -87,10 +87,8 @@ class UserPage extends Component {
 
                 
                 <BasicFooter>
-                    <Link to='/'>Home</Link>
-                    <button onClick={this.toggleModal}>
-                        Add a New User
-                    </button>
+                    <Link to='/' className="fa fa-home fa-2x router-link" aria-hidden="true" ></Link>
+                    <i className="fa fa-plus fa-2x" aria-hidden="true" onClick={this.toggleModal}></i>
                 </BasicFooter>
             </MainContainer>
         )

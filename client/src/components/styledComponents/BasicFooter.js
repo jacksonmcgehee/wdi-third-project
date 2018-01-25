@@ -9,6 +9,9 @@ const BasicFooter = styled.div`
   background-color: #00B16A;
   color: #FDB40D;
   text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
 `
 
 export default BasicFooter

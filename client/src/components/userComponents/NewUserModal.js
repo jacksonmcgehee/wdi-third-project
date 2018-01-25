@@ -2,6 +2,8 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import NewUserForm from './NewUserForm'
 
+import CancelButton from '../styledComponents/CancelButton'
+
 class NewUserModal extends React.Component {
   render() {
     // Render nothing if the "show" prop is false
@@ -33,13 +35,13 @@ class NewUserModal extends React.Component {
     return (
       <div className="backdrop"  style={backdropStyle}> 
         <div className="modal" style={modalStyle}>
-          Enter a new user.
+          <h3 className="modal-title-text">Enter a new user</h3>
           
           <NewUserForm 
           addUser={this.props.addUser} />
 
           <div className="footer">
-            <button onClick={() => {this.props.toggleModal()}}>Cancel</button>
+            <CancelButton onClick={() => {this.props.toggleModal()}} value="Cancel" >Cancel</CancelButton>
 
           </div>
         </div>
