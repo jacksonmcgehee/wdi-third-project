@@ -4,6 +4,8 @@ import ButtonDiv from './styledComponents/ButtonDiv'
 import ImgContainer from './styledComponents/ImgContainer'
 import Img from './styledComponents/Img'
 import PageTitle from './styledComponents/PageTitle'
+import CenterContainer from './styledComponents/CenterContainer'
+import BasicFooter from './styledComponents/BasicFooter'
 
 class HomePage extends Component {
 
@@ -19,14 +21,14 @@ class HomePage extends Component {
                         <h2 className="page-title-text" >Due Point</h2>
                     </PageTitle>
                 </ImgContainer>
-                <div>
-                    <ButtonDiv>
-                        <Link to='/users'>See Users</Link>
-                    </ButtonDiv>
-                </div>
-                <div className="basic-footer" >
+                <CenterContainer>
+                    
+                        <Link to='/users' className="router-link" ><ButtonDiv>See Users</ButtonDiv></Link>
+                    
+                </CenterContainer>
+                <BasicFooter >
 
-                </div>
+                </BasicFooter>
             </div>
         )
     }

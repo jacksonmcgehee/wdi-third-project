@@ -4,6 +4,13 @@ import axios from 'axios'
 import UserList from './UserList'
 import NewUserModal from './NewUserModal'
 
+import ButtonDiv from '../styledComponents/ButtonDiv'
+import ImgContainer from '../styledComponents/ImgContainer'
+import Img from '../styledComponents/Img'
+import PageTitle from '../styledComponents/PageTitle'
+import CenterContainer from '../styledComponents/CenterContainer'
+import BasicFooter from '../styledComponents/BasicFooter'
+
 
 class UserPage extends Component {
 
@@ -52,15 +59,23 @@ class UserPage extends Component {
     render() {
         return (
             <div>
-                <div>
-                    Hello from the UserPage.
-                    <Link to='/'>Home</Link>
+                <div className="basic-header" >
+                    <h2 className="header-text" >Due Point</h2>
                 </div>
-
+                <ImgContainer>
+                    <Img src="/images/bw-seats.jpg" />
+                    <PageTitle>
+                        <h2 className="page-title-text" >Users</h2>
+                    </PageTitle>
+                </ImgContainer>
+                <CenterContainer>
+                    <UserList 
+                    users={this.state.users}
+                    deleteUser={this.deleteUser}
+                    toggleDeleteModal={this.toggleDeleteModal}/>
+                </CenterContainer>
                 <div>
-                    <button onClick={this.toggleModal}>
-                        Add a New User
-                    </button>
+                    
 
                     <NewUserModal 
                         show={this.state.isOpen}
@@ -69,12 +84,13 @@ class UserPage extends Component {
                     
                 </div>
 
-                <div>
-                    <UserList 
-                    users={this.state.users}
-                    deleteUser={this.deleteUser}
-                    toggleDeleteModal={this.toggleDeleteModal}/>
-                </div>
+                
+                <BasicFooter>
+                    <Link to='/'>Home</Link>
+                    <button onClick={this.toggleModal}>
+                        Add a New User
+                    </button>
+                </BasicFooter>
             </div>
         )
     }
