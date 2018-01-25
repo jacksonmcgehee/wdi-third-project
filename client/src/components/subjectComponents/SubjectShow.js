@@ -1,6 +1,14 @@
 import React, { Component } from 'react'
+import {Link} from 'react-router-dom'
 import axios from 'axios'
 import FlashCardList from '../flashCardComponents/FlashCardList'
+
+import MainContainer from '../styledComponents/MainContainer'
+import ImgContainer from '../styledComponents/ImgContainer'
+import Img from '../styledComponents/Img'
+import PageTitle from '../styledComponents/PageTitle'
+import CenterContainer from '../styledComponents/CenterContainer'
+import BasicFooter from '../styledComponents/BasicFooter'
 
 class SubjectShow extends Component {
     state = {
@@ -24,13 +32,21 @@ class SubjectShow extends Component {
         const params = this.props.match.params
         // const subjectId = this.props.match.params
         return (
-            <div>
-                Hello again.
-                {this.state.subject.name}
+            <MainContainer>
+                <div className="basic-header" >
+                    <h2 className="header-text" >Due Point</h2>
+                </div>
                 <FlashCardList 
-                flashCards={this.state.flashCards} 
+                flashCards={this.state.flashCards}
+                subject={this.state.subject} 
                 params={params}/>
-            </div>
+                <BasicFooter>
+                    <Link to='/' className="fa fa-home fa-2x router-link" aria-hidden="true" ></Link>
+                    <Link to={`/users/${params.userId}`} className="fa fa-arrow-left fa-2x router-link" aria-hidden="true"></Link>
+                    <i className="fa fa-pencil fa-2x" aria-hidden="true" ></i>
+                    <i className="fa fa-plus fa-2x" aria-hidden="true" ></i>
+                </BasicFooter>
+            </MainContainer>
         )
     }
 }

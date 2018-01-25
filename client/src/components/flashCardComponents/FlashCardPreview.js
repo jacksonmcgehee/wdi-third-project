@@ -1,16 +1,22 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
 
+import FlashContainer from '../styledComponents/FlashContainer'
+import FlashLink from '../styledComponents/FlashLink'
+
 const FlashCardPreview = (props) => {
    
     return (
-        <div>
-            <Link 
-            to={`/users/${props.params.userId}/subjects/${props.params.subjectId}/flashCards/${props.flashCard._id}`} 
-            key={props.flashCard._id}>
-            {props.flashCard.question}
-            </Link>
-        </div>
+        <FlashContainer>
+            <FlashLink>
+                <Link 
+                to={`/users/${props.params.userId}/subjects/${props.params.subjectId}/flashCards/${props.flashCard._id}`} 
+                key={props.flashCard._id}
+                className="flash-link">
+                {props.flashCard.question}
+                </Link>
+            </FlashLink>
+        </FlashContainer>
     )
 }
 

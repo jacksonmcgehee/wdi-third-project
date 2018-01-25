@@ -1,12 +1,16 @@
 import React from 'react'
 import FlashCardPreview from './FlashCardPreview'
 
+import ListContainer from '../styledComponents/ListContainer'
+import FlashButton from '../styledComponents/FlashButton'
+
 const FlashCardList = (props) => {
 
 
     return (
-        <div>
-            Hello from the flash card list.
+        <ListContainer>
+            <h3 className="modal-title-text">{props.subject.name}</h3>
+            <FlashButton>Review</FlashButton>
             {
                 props.flashCards.map((flashCard) => {
                 return (
@@ -20,7 +24,7 @@ const FlashCardList = (props) => {
                 )
                 })
             }
-        </div>
+        </ListContainer>
     )
 }
 
