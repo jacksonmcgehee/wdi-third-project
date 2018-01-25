@@ -14,4 +14,35 @@ router.get('/:subjectId', (req, res) => {
     })
 })
 
+// router.post('/', (req, res) => {
+//     const userId = req.params.userId
+//     const newSubject = req.body
+//     console.log(newSubject)
+//     User.findById(userId)
+//         .then((user) => {
+//             user.subjects.push(newSubject)
+//             return user.save()
+//     }).then((user) => {
+//         res.json(user)
+//     }).catch(console.log)
+//   })
+
+//   router.post('/', (req, res) => {
+//     const workoutId = req.params.workoutId
+//     const userId = req.params.userId
+//     const newWorkout = req.body
+
+//     User.findById(userId)
+//         .then((user) => {
+//             user.workoutsCreated.push(newWorkout)
+//             return user.save()
+//         })
+//         .then(() => {
+//             res.redirect(`/users/${userId}`)
+//         })
+//         .catch((error) => {
+//             console.log(error)
+//         })
+// })
+
 module.exports = router

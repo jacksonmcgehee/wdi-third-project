@@ -40,7 +40,7 @@ class EditUserModal extends React.Component {
           updateUser={this.props.updateUser}/>
 
           <div className="footer">
-          <button onClick={() => {this.props.toggleModal()}}>Cancel</button>
+          <button onClick={() => {this.props.toggleEditModal()}}>Cancel</button>
           </div>
         </div>
       </div>

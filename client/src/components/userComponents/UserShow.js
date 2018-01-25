@@ -12,7 +12,13 @@ class UserShow extends Component {
         isOpen: false
     }
 
-    toggleModal = () => {
+    toggleEditModal = () => {
+        this.setState({
+        isOpen: !this.state.isOpen
+        })
+    }
+
+    toggleSubjectModal = () => {
         this.setState({
         isOpen: !this.state.isOpen
         })
@@ -30,13 +36,13 @@ class UserShow extends Component {
 
     updateUser = (updatedUser) => {
         const userId = this.state.user._id
-        axios.patch(`/api/users/${userId}/edit`, {
+        axios.patch(`/api/users/${userId}`, {
             user: updatedUser
         }).then((res) => {
             const resUser = res.data
             this.setState({user: resUser})
         }).then(() => {
-            this.toggleModal()
+            this.toggleEditModal()
         })
     }
 
@@ -56,15 +62,18 @@ class UserShow extends Component {
                     <button onClick="">Delete</button>
                 </div> */}
                 <div>
-                    <button onClick={this.toggleModal}>
+                    <button onClick={this.toggleEditModal}>
                         Edit {this.state.user.userName}
                     </button>
 
                     <EditUserModal 
                         show={this.state.isOpen}
                         user={this.state.user} 
-                        updateUser={this.up}
-                        toggleModal={this.toggleModal}/>
+                        updateUser={this.updateUser}
+                        toggleEditModal={this.toggleEditModal}/>
+
+                    {/* <AddSubjectModal /> */}
+
                 </div>
                 <SubjectList 
                 subjects={this.state.subjects} 
