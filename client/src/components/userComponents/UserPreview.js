@@ -13,7 +13,7 @@ const UserPreview = (props) => {
             <input 
             type="submit" 
             value="Delete User" 
-            onClick={() => {props.deleteUser(props.user)}}></input>
+            onClick={this.submit}></input>
             
         </div>
     )
