@@ -9,12 +9,12 @@ class UserShow extends Component {
     state = {
         user: {},
         subjects: [],
-        isOpen: false
+        isOpenEdit: false
     }
 
     toggleEditModal = () => {
         this.setState({
-        isOpen: !this.state.isOpen
+        isOpenEdit: !this.state.isOpenEdit
         })
     }
 
@@ -67,7 +67,7 @@ class UserShow extends Component {
                     </button>
 
                     <EditUserModal 
-                        show={this.state.isOpen}
+                        show={this.state.isOpenEdit}
                         user={this.state.user} 
                         updateUser={this.updateUser}
                         toggleEditModal={this.toggleEditModal}/>

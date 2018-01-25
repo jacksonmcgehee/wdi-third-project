@@ -31,6 +31,7 @@ class DeleteUserModal extends React.Component {
     }
 
     return (
+    
       <div className="backdrop"  style={backdropStyle}> 
         <div className="modal" style={modalStyle}>
           Delete {this.props.user.userName}
