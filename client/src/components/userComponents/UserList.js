@@ -10,7 +10,8 @@ class UserList extends Component {
                 <UserPreview 
                 user={user} 
                 key={user._id}
-                deleteUser={this.props.deleteUser}/>
+                deleteUser={this.props.deleteUser}
+                toggleDeleteModal={this.props.toggleDeleteModal}/>
             )
             })
 

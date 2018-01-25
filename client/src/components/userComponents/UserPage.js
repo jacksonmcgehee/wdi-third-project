@@ -4,6 +4,7 @@ import axios from 'axios'
 import UserList from './UserList'
 import NewUserModal from './NewUserModal'
 
+
 class UserPage extends Component {
 
     state = {
@@ -16,7 +17,13 @@ class UserPage extends Component {
         isOpen: !this.state.isOpen
         })
     }
-    
+
+    toggleDeleteModal = () => {
+        this.setState({
+        isOpen: !this.state.isOpen
+        })
+    }
+
     async componentWillMount() {
         const response = await axios.get('/api/users')
         this.setState({users: response.data})
@@ -59,12 +66,14 @@ class UserPage extends Component {
                         show={this.state.isOpen}
                         addUser={this.addUser}
                         toggleModal={this.toggleModal} />
+                    
                 </div>
 
                 <div>
                     <UserList 
-                    users={this.state.users} 
-                    deleteUser={this.deleteUser}/>
+                    users={this.state.users}
+                    deleteUser={this.deleteUser}
+                    toggleDeleteModal={this.toggleDeleteModal}/>
                 </div>
             </div>
         )
