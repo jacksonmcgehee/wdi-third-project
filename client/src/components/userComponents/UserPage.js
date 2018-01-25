@@ -81,7 +81,7 @@ class UserPage extends Component {
                     <NewUserModal 
                         show={this.state.isOpen}
                         addUser={this.addUser}
-                        toggleModal={this.toggleModal} />
+                        toggleModal={this.toggleModal}  />
                     
                 </div>
 

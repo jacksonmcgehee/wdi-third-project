@@ -3,6 +3,7 @@ import {Link} from 'react-router-dom'
 
 import ButtonDiv from '../styledComponents/ButtonDiv'
 import PreviewContainer from '../styledComponents/PreviewContainer'
+import DeleteButton from '../styledComponents/DeleteButton'
 
 const UserPreview = (props) => {
    
@@ -15,10 +16,10 @@ const UserPreview = (props) => {
                     {props.user.userName}
                 </ButtonDiv>
             </Link>
-            <input 
+            <DeleteButton 
             type="submit" 
-            value="Delete User" 
-            onClick={() => {props.deleteUser(props.user)}}></input>
+            value="Delete" 
+            onClick={() => {props.deleteUser(props.user)}}></DeleteButton>
             
         </PreviewContainer>
     )
