@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
-const CenterContainer = styled.div`
-  height: 50vh;
+const ListContainer = styled.div`
+  height: 50px;
   width: 100%;
   display: flex;
   align-items: center;
@@ -9,4 +9,4 @@ const CenterContainer = styled.div`
   overflow: scroll;
 `
 
-export default CenterContainer
+export default ListContainer

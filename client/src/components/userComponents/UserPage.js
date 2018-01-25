@@ -4,12 +4,13 @@ import axios from 'axios'
 import UserList from './UserList'
 import NewUserModal from './NewUserModal'
 
-import ButtonDiv from '../styledComponents/ButtonDiv'
+import MainContainer from '../styledComponents/MainContainer'
 import ImgContainer from '../styledComponents/ImgContainer'
 import Img from '../styledComponents/Img'
 import PageTitle from '../styledComponents/PageTitle'
 import CenterContainer from '../styledComponents/CenterContainer'
 import BasicFooter from '../styledComponents/BasicFooter'
+
 
 
 class UserPage extends Component {
@@ -58,7 +59,7 @@ class UserPage extends Component {
 
     render() {
         return (
-            <div>
+            <MainContainer>
                 <div className="basic-header" >
                     <h2 className="header-text" >Due Point</h2>
                 </div>
@@ -91,7 +92,7 @@ class UserPage extends Component {
                         Add a New User
                     </button>
                 </BasicFooter>
-            </div>
+            </MainContainer>
         )
     }
 }

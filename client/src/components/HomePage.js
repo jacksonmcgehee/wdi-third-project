@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import {Link} from 'react-router-dom'
 import ButtonDiv from './styledComponents/ButtonDiv'
+
+import MainContainer from './styledComponents/MainContainer'
 import ImgContainer from './styledComponents/ImgContainer'
 import Img from './styledComponents/Img'
 import PageTitle from './styledComponents/PageTitle'
@@ -11,7 +13,7 @@ class HomePage extends Component {
 
     render() {
         return (
-            <div>
+            <MainContainer>
                 <div className="basic-header" >
                     
                 </div>
@@ -29,7 +31,7 @@ class HomePage extends Component {
                 <BasicFooter >
 
                 </BasicFooter>
-            </div>
+            </MainContainer>
         )
     }
 }
