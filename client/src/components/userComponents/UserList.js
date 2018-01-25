@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import UserPreview from './UserPreview'
 
+import ListContainer from '../styledComponents/ListContainer'
+
 class UserList extends Component {
 
     render() {
@@ -11,14 +13,15 @@ class UserList extends Component {
                 user={user} 
                 key={user._id}
                 deleteUser={this.props.deleteUser}
-                toggleDeleteModal={this.props.toggleDeleteModal}/>
+                toggleDeleteModal={this.props.toggleDeleteModal}
+                 />
             )
             })
 
         return (
-            <div>
+            <ListContainer>
                 { userPreview }
-            </div>
+            </ListContainer>
         )
     }
 }

@@ -2,12 +2,12 @@ import React from 'react'
 import {Link} from 'react-router-dom'
 
 import ButtonDiv from '../styledComponents/ButtonDiv'
-import CenterContainer from '../styledComponents/CenterContainer'
+import PreviewContainer from '../styledComponents/PreviewContainer'
 
 const UserPreview = (props) => {
    
     return (
-        <CenterContainer>
+        <PreviewContainer>
             <Link 
             to={`/users/${props.user._id}`} 
             key={props.user._id} className="router-link" >
@@ -20,7 +20,7 @@ const UserPreview = (props) => {
             value="Delete User" 
             onClick={() => {props.deleteUser(props.user)}}></input>
             
-        </CenterContainer>
+        </PreviewContainer>
     )
 }
 

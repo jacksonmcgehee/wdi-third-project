@@ -9,6 +9,7 @@ const ButtonDiv = styled.div`
   font-size: 25px;
   border: .75px solid #00B16A;
   text-align: center;
+  margin: 0 5px;
 `
 
 export default ButtonDiv
