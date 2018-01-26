@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-import FlashLink from '../styledComponents/FlashLink'
+import FlashLinkAnswer from '../styledComponents/FlashLinkAnswer'
 
 class FlashCardAnswer extends Component {
 
@@ -11,9 +11,10 @@ class FlashCardAnswer extends Component {
       }
 
     return (
-        <FlashLink>
+        <FlashLinkAnswer>
+            <h4 className="answer-title">Answer: </h4>
             {this.props.flashCard.answer}
-        </FlashLink>
+        </FlashLinkAnswer>
     )
 }
 }

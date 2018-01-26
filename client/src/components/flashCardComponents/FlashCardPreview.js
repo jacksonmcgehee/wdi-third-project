@@ -21,11 +21,11 @@ class FlashCardPreview extends Component {
     return (
         <div>
         <FlashContainer>
-            <i className="fa fa-pencil fa-lg" aria-hidden="true" onClick={this.props.toggleEditFlashModal} ></i>
+            <i className="fa fa-pencil fa-lg fc-icon" aria-hidden="true" onClick={this.props.toggleEditFlashModal} ></i>
             <FlashLink onClick={this.toggleAnswer}>
                 {this.props.flashCard.question}
             </FlashLink>   
-            <i className="fa fa-trash fa-lg" aria-hidden="true"></i>
+            <i className="fa fa-trash fa-lg fc-icon" aria-hidden="true"></i>
         </FlashContainer>
         <FlashCardAnswer 
                 show={this.state.isOpenAnswer}
