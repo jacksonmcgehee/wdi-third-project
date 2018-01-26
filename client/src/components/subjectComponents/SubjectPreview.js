@@ -7,6 +7,12 @@ import DeleteButton from '../styledComponents/DeleteButton'
 
 const SubjectPreview = (props) => {
    
+    const handleClick = () => {
+        if(window.confirm('Are you sure?')) {
+            props.deleteSubject(props.subject)
+        }
+    }
+
     return (
         <PreviewContainer>
             <Link 
@@ -20,8 +26,8 @@ const SubjectPreview = (props) => {
             <DeleteButton
             type="submit"
             value="Delete"
-            // add onClick here
-            ></DeleteButton>
+            onClick={handleClick}>
+            </DeleteButton>
 
         </PreviewContainer>
     )

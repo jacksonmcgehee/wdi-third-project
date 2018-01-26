@@ -60,12 +60,19 @@ class UserShow extends Component {
         axios.post(`/api/users/${userId}/subjects`, {
             subject: newSubject
         }).then((res) => {
-        
-        
             this.setState({subjects: res.data.subjects})
         }).then(() => {
             this.toggleSubjectModal()
         })
+    }
+
+    deleteSubject = (subject) => {
+        const userId = this.state.user._id
+        const subjectId = subject._id
+        axios.delete(`/api/users/${userId}/subjects/${subjectId}`)
+            .then(() => {
+                this.componentWillMount()
+            })
     }
 
     
@@ -87,7 +94,8 @@ class UserShow extends Component {
                     <SubjectList 
                     subjects={this.state.subjects}
                     userName={this.state.user.userName} 
-                    userId={this.state.user._id}/>
+                    userId={this.state.user._id}
+                    deleteSubject={this.deleteSubject}/>
                 </CenterContainer>
                 <div>
                     

@@ -19,12 +19,9 @@ router.post('/', (req, res) => {
     }).catch(console.log)
   })
 
-  router.patch('/:userId/', (req, res) => {
-    console.log(req.params.userId)
-    console.log(req.body)
+router.patch('/:userId/', (req, res) => {
     User.findByIdAndUpdate(req.params.userId, req.body.user, {new: true})
     .then((user) => {
-        console.log(user)
         res.json(user)
     }).catch((error) => {
         console.log(error)

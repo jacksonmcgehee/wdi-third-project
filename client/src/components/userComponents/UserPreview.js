@@ -23,7 +23,11 @@ const UserPreview = (props) => {
                     {props.user.userName}
                 </ButtonDiv>
             </Link>
-            <DeleteButton type="submit" value="Delete" onClick={handleClick}></DeleteButton>
+            <DeleteButton 
+            type="submit" 
+            value="Delete" 
+            onClick={handleClick}>
+            </DeleteButton>
 
         </PreviewContainer>
     )

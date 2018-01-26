@@ -16,7 +16,7 @@ const SubjectList = (props) => {
                         <SubjectPreview 
                         subject={subject} 
                         {...props} 
-                         
+                        deleteSubject={props.deleteSubject} 
                         userId={props.userId}/>
                     </div>
                 )
