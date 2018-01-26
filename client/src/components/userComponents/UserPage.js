@@ -43,11 +43,10 @@ class UserPage extends Component {
         }).then((res) => {
             const users = [...this.state.users]
             users.push(res.data)
-            this.setState({users: users})
-        }).then(() => {
-            this.toggleModal()
-        })
-      }
+            this.setState({users: users,
+            isOpen: !this.state.isOpen})
+      })
+    }
 
     deleteUser = (user) => {
         const userId = user._id

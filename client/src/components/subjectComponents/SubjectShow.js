@@ -38,7 +38,6 @@ class SubjectShow extends Component {
         axios.patch(`/api/users/${userId}/subjects/${subjectId}`, {
             subject: updatedSubject
         }).then((res) => {
-            console.log('res.data is: ', res.data)
             this.setState({subject: res.data, 
                 isOpenEditSubject: !this.state.isOpenEditSubject})
         })

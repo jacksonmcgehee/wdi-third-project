@@ -10,6 +10,7 @@ const FlashCardList = (props) => {
     return (
         <ListContainer>
             <h3 className="modal-title-text">{props.subject.name}</h3>
+            <h3 className="modal-title-text">Test on: {props.subject.testDate}</h3>
             <FlashButton>Review</FlashButton>
             {
                 props.flashCards.map((flashCard) => {

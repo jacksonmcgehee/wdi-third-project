@@ -52,7 +52,7 @@ class EditSubjectForm extends Component {
                     placeholder="Test Date" 
                     onChange={this.handleEditSubjectChange} 
                     value={this.state.updatedSubject.testDate} /></div>
-                    <div><SubmitButton type="submit" value="Create" /></div>
+                    <div><SubmitButton type="submit" value="Submit" /></div>
                 </ModalForm>
             </div>
         )

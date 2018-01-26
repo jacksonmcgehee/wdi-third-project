@@ -1,15 +1,18 @@
 import styled from 'styled-components'
 
 const ButtonDiv = styled.div`
-  height: 50px;
+  height: 70px;
   width: 250px;
   background-color: white;
   color: #00B16A;
-  padding-top: 20px;
   font-size: 25px;
   border: .75px solid #00B16A;
   text-align: center;
   margin: 0 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
 `
 
 export default ButtonDiv
