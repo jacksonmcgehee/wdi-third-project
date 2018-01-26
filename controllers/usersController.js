@@ -31,6 +31,8 @@ router.post('/', (req, res) => {
     })
 })
 
+
+
 // router.patch('/:userId/', async(req, res) => {
 //     try {
 //         console.log('The try is getting called')

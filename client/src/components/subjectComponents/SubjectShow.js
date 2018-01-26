@@ -4,10 +4,6 @@ import axios from 'axios'
 import FlashCardList from '../flashCardComponents/FlashCardList'
 
 import MainContainer from '../styledComponents/MainContainer'
-import ImgContainer from '../styledComponents/ImgContainer'
-import Img from '../styledComponents/Img'
-import PageTitle from '../styledComponents/PageTitle'
-import CenterContainer from '../styledComponents/CenterContainer'
 import BasicFooter from '../styledComponents/BasicFooter'
 
 class SubjectShow extends Component {
