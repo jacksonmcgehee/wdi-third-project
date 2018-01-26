@@ -3,6 +3,7 @@ import {Link} from 'react-router-dom'
 import axios from 'axios'
 import FlashCardList from '../flashCardComponents/FlashCardList'
 import EditSubjectModal from './EditSubjectModal'
+import NewCardModal from '../flashCardComponents/NewCardModal'
 
 import MainContainer from '../styledComponents/MainContainer'
 import BasicFooter from '../styledComponents/BasicFooter'
@@ -11,12 +12,20 @@ class SubjectShow extends Component {
     state = {
         subject: {},
         flashCards: [],
-        isOpenEditSubject: false
+        isOpenEditSubject: false,
+        isOpenAddSubject: false,
+        isOpenAddCard: false
     }
 
     toggleEditSubjectModal = () => {
         this.setState({
         isOpenEditSubject: !this.state.isOpenEditSubject
+        })
+    }
+
+    toggleAddCardModal = () => {
+        this.setState({
+        isOpenAddCard: !this.state.isOpenAddCard
         })
     }
 
@@ -43,6 +52,18 @@ class SubjectShow extends Component {
         })
     }
 
+    addFlashCard = (newCard) => {
+        const userId = this.props.match.params.userId
+        const subjectId = this.state.subject._id
+
+        axios.post(`/api/users/${userId}/subjects/${subjectId}/flashcard`, {
+            flashCard: newCard
+        }).then((res) => {
+            this.setState({flashCards: res.data, 
+            isOpenAddCard: !this.state.isOpenAddCard})
+        })
+    }
+
     render() {
         const params = this.props.match.params
         // const subjectId = this.props.match.params
@@ -62,11 +83,17 @@ class SubjectShow extends Component {
                 updateSubject={this.updateSubject} 
                 toggleEditSubjectModal={this.toggleEditSubjectModal}/>
 
+                <NewCardModal
+                show={this.state.isOpenAddCard}
+                addFlashCard={this.addFlashCard}
+                toggleAddCardModal={this.toggleAddCardModal} />
+
+
                 <BasicFooter>
                     <Link to='/' className="fa fa-home fa-2x router-link" aria-hidden="true" ></Link>
                     <Link to={`/users/${params.userId}`} className="fa fa-arrow-left fa-2x router-link" aria-hidden="true"></Link>
                     <i className="fa fa-pencil fa-2x" aria-hidden="true" onClick={this.toggleEditSubjectModal} ></i>
-                    <i className="fa fa-plus fa-2x" aria-hidden="true" ></i>
+                    <i className="fa fa-plus fa-2x" aria-hidden="true" onClick={this.toggleAddCardModal}></i>
                 </BasicFooter>
             </MainContainer>
         )

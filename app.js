@@ -50,6 +50,9 @@ app.use('/api/users', usersController)
 const subjectsController = require('./controllers/subjectsController')
 app.use('/api/users/:userId/subjects', subjectsController)
 
+const flashCardController = require('./controllers/flashCardController')
+app.use('/api/users/:userId/subjects/:subjectId/flashcard', flashCardController)
+
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   const err = new Error('Not Found')
