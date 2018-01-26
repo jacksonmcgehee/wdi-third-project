@@ -31,10 +31,30 @@ class NewUserForm extends Component {
         return(
             <div>
                 <ModalForm onSubmit={this.addNewUser} >
-                    <div><FormInput type="text" name="userName" placeholder="User Name" onChange={this.handleNewUserChange} /></div>
-                    <div><FormInput type="text" name="firstName" placeholder="First Name" onChange={this.handleNewUserChange} /></div>
-                    <div><FormInput type="text" name="lastName" placeholder="Last Name" onChange={this.handleNewUserChange} /></div>
-                    <div><FormInput type="text" name="email" placeholder="Email" onChange={this.handleNewUserChange} /></div>
+                    <div><FormInput 
+                    type="text" 
+                    name="userName" 
+                    placeholder="User Name"
+                    required 
+                    onChange={this.handleNewUserChange} /></div>
+                    <div><FormInput 
+                    type="text" 
+                    name="firstName"
+                    required 
+                    placeholder="First Name" 
+                    onChange={this.handleNewUserChange} /></div>
+                    <div><FormInput 
+                    type="text" 
+                    name="lastName" 
+                    placeholder="Last Name" 
+                    required
+                    onChange={this.handleNewUserChange} /></div>
+                    <div><FormInput 
+                    type="text" 
+                    name="email" 
+                    placeholder="Email"
+                    required
+                    onChange={this.handleNewUserChange} /></div>
                     <div><SubmitButton type="submit" value="Create" /></div>
                 </ModalForm>
             </div>

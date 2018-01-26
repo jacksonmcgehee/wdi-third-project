@@ -31,8 +31,17 @@ class NewSubjectForm extends Component {
         return(
             <div>
                 <ModalForm onSubmit={this.addNewSubject} >
-                    <div><FormInput type="text" name="name" placeholder="Subject Name" onChange={this.handleNewSubjectChange} /></div>
-                    <div><FormInput type="date" name="testDate" placeholder="Test Date" onChange={this.handleNewSubjectChange} /></div>
+                    <div><FormInput 
+                    type="text" 
+                    name="name" 
+                    placeholder="Subject Name"
+                    required 
+                    onChange={this.handleNewSubjectChange} /></div>
+                    <div><FormInput 
+                    type="date" 
+                    name="testDate" 
+                    placeholder="Test Date" 
+                    onChange={this.handleNewSubjectChange} /></div>
                     <div><SubmitButton type="submit" value="Create" /></div>
                 </ModalForm>
             </div>
