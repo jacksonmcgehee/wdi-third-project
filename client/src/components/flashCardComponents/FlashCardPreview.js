@@ -1,23 +1,38 @@
-import React from 'react'
-import {Link} from 'react-router-dom'
+import React, { Component } from 'react'
+
+import FlashCardAnswer from './FlashCardAnswer'
 
 import FlashContainer from '../styledComponents/FlashContainer'
 import FlashLink from '../styledComponents/FlashLink'
 
-const FlashCardPreview = (props) => {
+class FlashCardPreview extends Component {
    
+    state = {
+        isOpenAnswer: false
+    }
+
+    toggleAnswer = () => {
+        this.setState({
+            isOpenAnswer: !this.state.isOpenAnswer
+        })
+    }
+
+    render() {
     return (
+        <div>
         <FlashContainer>
-            <FlashLink>
-                <Link 
-                to={`/users/${props.params.userId}/subjects/${props.params.subjectId}/flashCards/${props.flashCard._id}`} 
-                key={props.flashCard._id}
-                className="flash-link">
-                {props.flashCard.question}
-                </Link>
-            </FlashLink>
+            <i className="fa fa-pencil fa-lg" aria-hidden="true" onClick={this.props.toggleEditFlashModal} ></i>
+            <FlashLink onClick={this.toggleAnswer}>
+                {this.props.flashCard.question}
+            </FlashLink>   
+            <i className="fa fa-trash fa-lg" aria-hidden="true"></i>
         </FlashContainer>
+        <FlashCardAnswer 
+                show={this.state.isOpenAnswer}
+                flashCard={this.props.flashCard} />
+        </div>
     )
+}
 }
 
 export default FlashCardPreview

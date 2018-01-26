@@ -19,7 +19,7 @@ const FlashCardList = (props) => {
                         <FlashCardPreview 
                         flashCard={flashCard} 
                         {...props} 
-                         
+                        toggleEditFlashModal={props.toggleEditFlashModal}
                         params={props.params}/>
                     </div>
                 )
