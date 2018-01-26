@@ -18,7 +18,6 @@ router.post('/', (req, res) => {
             return user.save()
         })
         .then((user) => {
-            console.log('This is the res.data from the server: ', user.subjects.id(subjectId).flashCards)
             res.json(user.subjects.id(subjectId).flashCards)
         })
         .catch((error) => {
@@ -26,5 +25,23 @@ router.post('/', (req, res) => {
         })
 })
 
+router.delete('/:flashcardId', (req, res) => {
+    const userId = req.params.userId
+    const subjectId = req.params.subjectId
+    const flashcardId = req.params.flashcardId
+
+    User.findById(userId)
+        .then((user) => {
+            const subject = user.subjects.id(subjectId)
+            subject.flashCards.id(flashcardId).remove()
+            return user.save()
+        })
+        .then((user) => {
+            res.json(user.subjects.id(subjectId).flashCards)
+        })
+        .catch((error) => {
+            console.log(error)
+        })
+})
 
 module.exports = router

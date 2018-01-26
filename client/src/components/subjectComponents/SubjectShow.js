@@ -64,6 +64,16 @@ class SubjectShow extends Component {
         })
     }
 
+    deleteFlashCard = (flashcard) => {
+        const userId = this.props.match.params.userId
+        const subjectId = this.state.subject._id
+        const flashcardId = flashcard._id
+        axios.delete(`/api/users/${userId}/subjects/${subjectId}/flashcard/${flashcardId}`)
+            .then((res) => {
+                this.setState({flashCards: res.data})
+            })
+    }
+
     render() {
         const params = this.props.match.params
         // const subjectId = this.props.match.params
@@ -74,7 +84,8 @@ class SubjectShow extends Component {
                 </div>
                 <FlashCardList 
                 flashCards={this.state.flashCards}
-                subject={this.state.subject} 
+                subject={this.state.subject}
+                deleteFlashCard={this.deleteFlashCard} 
                 params={params}/>
 
                 <EditSubjectModal

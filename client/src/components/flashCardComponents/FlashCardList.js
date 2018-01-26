@@ -17,9 +17,10 @@ const FlashCardList = (props) => {
                 return (
                     <div key={flashCard._id}>
                         <FlashCardPreview 
-                        flashCard={flashCard} 
+                        flashcard={flashCard} 
                         {...props} 
                         toggleEditFlashModal={props.toggleEditFlashModal}
+                        deleteFlashCard={props.deleteFlashCard}
                         params={props.params}/>
                     </div>
                 )
