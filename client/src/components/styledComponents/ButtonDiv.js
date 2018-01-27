@@ -13,7 +13,7 @@ const ButtonDiv = styled.div`
   align-items: center;
   justify-content: center;
 
-  @media (max-width: 400px) {
+  @media (max-width: 500px) {
     font-size: 18px;
     width: 175px;
   }

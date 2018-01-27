@@ -5,7 +5,8 @@ const PreviewContainer = styled.div`
     align-items: center;
     margin: 15px;
     height: 70px;
-    padding: 40px;
+    width: 100%;
+    /* padding: 40px; */
     /* justify-content: space-between; */
 `
 

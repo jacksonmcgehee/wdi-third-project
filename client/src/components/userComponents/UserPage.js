@@ -75,18 +75,12 @@ class UserPage extends Component {
                     users={this.state.users}
                     deleteUser={this.deleteUser}
                     toggleDeleteModal={this.toggleDeleteModal}/>
-                </CenterContainer>
-                <div>
-                    
 
                     <NewUserModal 
-                        show={this.state.isOpen}
-                        addUser={this.addUser}
-                        toggleModal={this.toggleModal}  />
-                    
-                </div>
-
-                
+                    show={this.state.isOpen}
+                    addUser={this.addUser}
+                    toggleModal={this.toggleModal}  />
+                </CenterContainer>
                 <BasicFooter>
                     <Link to='/' className="fa fa-home fa-2x router-link" aria-hidden="true" ></Link>
                     <i className="fa fa-plus fa-2x" aria-hidden="true" onClick={this.toggleModal}></i>

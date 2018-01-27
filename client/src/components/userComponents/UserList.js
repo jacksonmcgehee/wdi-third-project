@@ -1,30 +1,28 @@
-import React, { Component } from 'react'
+import React from 'react'
 import UserPreview from './UserPreview'
 
 import ListContainer from '../styledComponents/ListContainer'
 
-class UserList extends Component {
+const UserList = (props) => {
 
-    render() {
-
-        const userPreview = this.props.users.map((user) => {
+    return(
+        <ListContainer>
+        {
+            props.users.map((user) => {
             return (
-                <UserPreview 
-                user={user} 
-                key={user._id}
-                deleteUser={this.props.deleteUser}
-                toggleDeleteModal={this.props.toggleDeleteModal}
-                 />
+                <div key={user._id}>
+                    <UserPreview 
+                    user={user} 
+                    key={user._id}
+                    deleteUser={props.deleteUser}
+                    toggleDeleteModal={props.toggleDeleteModal} />
+                </div>
             )
             })
-
-        return (
-            <ListContainer>
-                { userPreview }
-            </ListContainer>
+        }
+        </ListContainer>
         )
     }
-}
 
 export default UserList
 
