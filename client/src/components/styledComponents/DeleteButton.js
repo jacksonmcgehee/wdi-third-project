@@ -8,7 +8,14 @@ const DeleteButton = styled.input`
     font-size: 25px;
     border: .75px solid #B11D00;
     margin: 0 5px;
+    -webkit-appearance: none;
+    -webkit-border-radius: 0;
+    border-radius: 0;
 
+
+    @media (max-width: 400px) {
+    font-size: 18px;
+  }
 `
 
 export default DeleteButton

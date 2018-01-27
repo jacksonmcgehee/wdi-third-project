@@ -13,6 +13,11 @@ const ButtonDiv = styled.div`
   align-items: center;
   justify-content: center;
 
+  @media (max-width: 400px) {
+    font-size: 18px;
+    width: 175px;
+  }
+
 `
 
 export default ButtonDiv

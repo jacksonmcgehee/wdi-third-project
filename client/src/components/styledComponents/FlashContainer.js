@@ -7,5 +7,6 @@ const FlashContainer = styled.div`
     flex-direction: row;
     align-items: center;
     justify-content: flex-start;
+    overflow: scroll;
 `
 export default FlashContainer

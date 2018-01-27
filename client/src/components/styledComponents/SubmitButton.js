@@ -8,6 +8,9 @@ const SubmitButton = styled.input`
     font-size: 18px;
     border: .75px solid  #00B16A;
     margin: 10px;
+    -webkit-appearance: none;
+    -webkit-border-radius: 0;
+    border-radius: 0;
 
 `
 
