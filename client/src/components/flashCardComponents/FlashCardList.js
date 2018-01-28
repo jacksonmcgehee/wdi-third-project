@@ -2,6 +2,7 @@ import React from 'react'
 import FlashCardPreview from './FlashCardPreview'
 
 import ListContainer from '../styledComponents/ListContainer'
+import FlashBigContainer from '../styledComponents/FlashBigContainer'
 import FlashButton from '../styledComponents/FlashButton'
 
 const FlashCardList = (props) => {
@@ -12,6 +13,7 @@ const FlashCardList = (props) => {
             <h3 className="modal-title-text">{props.subject.name}</h3>
             <h3 className="modal-title-text">Test on: {props.subject.testDate}</h3>
             <FlashButton>Review</FlashButton>
+            <FlashBigContainer>
             {
                 props.flashCards.map((flashCard) => {
                 return (
@@ -26,6 +28,7 @@ const FlashCardList = (props) => {
                 )
                 })
             }
+            </FlashBigContainer>
         </ListContainer>
     )
 }

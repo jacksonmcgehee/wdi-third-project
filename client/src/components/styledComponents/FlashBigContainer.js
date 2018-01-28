@@ -1,13 +1,13 @@
 import styled from 'styled-components'
 
-const ListContainer = styled.div`
-  height: 100%;
+const FlashBigContainer = styled.div`
+  height: 57vh;
   width: 100%;
+  padding-bottom: 5px;
   display: flex;
   flex-direction: column;
   align-items: center;
   overflow: scroll;
-  margin-top: 10px;
 `
 
-export default ListContainer
+export default FlashBigContainer
