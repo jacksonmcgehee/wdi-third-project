@@ -7,6 +7,7 @@ import ImgContainer from './styledComponents/ImgContainer'
 import Img from './styledComponents/Img'
 import PageTitle from './styledComponents/PageTitle'
 import CenterContainer from './styledComponents/CenterContainer'
+import HomeLink from './styledComponents/HomeLink'
 import BasicFooter from './styledComponents/BasicFooter'
 
 class HomePage extends Component {
@@ -24,9 +25,9 @@ class HomePage extends Component {
                     </PageTitle>
                 </ImgContainer>
                 <CenterContainer>
-                    
+                    <HomeLink>
                         <Link to='/users' className="router-link" ><ButtonDiv>See Users</ButtonDiv></Link>
-                    
+                    </HomeLink>
                 </CenterContainer>
                 <BasicFooter >
 

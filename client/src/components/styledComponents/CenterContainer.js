@@ -10,7 +10,8 @@ const CenterContainer = styled.div`
   overflow: scroll;
 
   @media (max-height: 750px) {
-    height: 49vh;
+    height: 45vh;
+  }
 
 `
 
