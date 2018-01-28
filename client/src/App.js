@@ -6,6 +6,7 @@ import HomePage from './components/HomePage'
 import UserPage from './components/userComponents/UserPage'
 import UserShow from './components/userComponents/UserShow'
 import SubjectShow from './components/subjectComponents/SubjectShow'
+import Review from './components/flashCardComponents/Review'
 
 class App extends Component {
 
@@ -18,6 +19,7 @@ class App extends Component {
           <Route exact path='/users' component={UserPage}/>
           <Route exact path='/users/:userId' component={UserShow}/>
           <Route exact path='/users/:userId/subjects/:subjectId' component={SubjectShow} />
+          <Route exact path='/users/:userId/subjects/:subjectId/review' component={Review} />
         </Switch>
       </Router>
     )

@@ -1,4 +1,6 @@
 import React, { Component } from 'react'
+import {Link} from 'react-router-dom'
+
 import FlashCardPreview from './FlashCardPreview'
 
 
@@ -13,7 +15,7 @@ class FlashCardList extends Component {
             <ListContainer>
                 <h3 className="modal-title-text">{this.props.subject.name}</h3>
                 <h3 className="modal-title-text">Test on: {this.props.subject.testDate}</h3>
-                <FlashButton>Review</FlashButton>
+                <Link to={`/users/${this.props.userId}/subjects/${this.props.subject._id}/review`} className="router-link" ><FlashButton >Review</FlashButton></Link>
                 <FlashBigContainer>
                 {
                     this.props.flashCards.map((flashCard) => {
