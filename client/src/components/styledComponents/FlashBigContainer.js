@@ -10,7 +10,7 @@ const FlashBigContainer = styled.div`
   overflow: scroll;
 
   @media (max-height: 750px) {
-    height: 47vh;
+    height: 40vh;
 `
 
 export default FlashBigContainer
