@@ -29,6 +29,12 @@ class SubjectShow extends Component {
         })
     }
 
+    toggleEditCardModal = () => {
+        this.setState({
+            isOpenEditCard: !this.state.isOpenEditCard
+        })
+    }
+
     componentWillMount () {
         if (this.props.match.params) {
           const { userId } = this.props.match.params
@@ -85,7 +91,8 @@ class SubjectShow extends Component {
                 <FlashCardList 
                 flashCards={this.state.flashCards}
                 subject={this.state.subject}
-                deleteFlashCard={this.deleteFlashCard} 
+                deleteFlashCard={this.deleteFlashCard}
+                toggleEditCardModal={this.toggleEditCardModal} 
                 params={params}/>
 
                 <EditSubjectModal
@@ -98,7 +105,6 @@ class SubjectShow extends Component {
                 show={this.state.isOpenAddCard}
                 addFlashCard={this.addFlashCard}
                 toggleAddCardModal={this.toggleAddCardModal} />
-
 
                 <BasicFooter>
                     <Link to='/' className="fa fa-home fa-2x router-link" aria-hidden="true" ></Link>
