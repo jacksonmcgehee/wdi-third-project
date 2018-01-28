@@ -8,6 +8,10 @@ const CenterContainer = styled.div`
   align-items: center;
   justify-content: center;
   overflow: scroll;
+
+  @media (max-height: 750px) {
+    height: 49vh;
+
 `
 
 export default CenterContainer

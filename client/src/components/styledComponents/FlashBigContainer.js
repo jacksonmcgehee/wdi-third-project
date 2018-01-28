@@ -8,6 +8,9 @@ const FlashBigContainer = styled.div`
   flex-direction: column;
   align-items: center;
   overflow: scroll;
+
+  @media (max-height: 750px) {
+    height: 47vh;
 `
 
 export default FlashBigContainer
