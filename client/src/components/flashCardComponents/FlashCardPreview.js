@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import axios from 'axios'
 
 import FlashCardAnswer from './FlashCardAnswer'
 
@@ -38,7 +39,16 @@ class FlashCardPreview extends Component {
     }
 
     updateFlashCard = (updatedCard) => {
-        
+        const userId = this.props.userId
+        const subjectId = this.props.subjectId
+        const flashcardId = this.state.flashCard._id
+
+        axios.patch(`/api/users/${userId}/subjects/${subjectId}/flashcard/${flashcardId}`, {
+            flashCard: updatedCard
+        }).then((res) => {
+            this.setState({flashCard: res.data,
+            isOpenEditCard: !this.state.isOpenEditCard})
+        })
     }
 
     render() {
