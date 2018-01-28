@@ -92,8 +92,8 @@ class SubjectShow extends Component {
                 flashCards={this.state.flashCards}
                 subject={this.state.subject}
                 deleteFlashCard={this.deleteFlashCard}
-                toggleEditCardModal={this.toggleEditCardModal} 
-                params={params}/>
+                toggleEditCardModal={this.toggleEditCardModal}
+                userId={this.props.match.params.userId} />
 
                 <EditSubjectModal
                 show={this.state.isOpenEditSubject}

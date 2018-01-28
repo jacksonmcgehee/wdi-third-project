@@ -24,7 +24,8 @@ class FlashCardList extends Component {
                             {...this.props} 
                             toggleEditCardModal={this.props.toggleEditCardModal}
                             deleteFlashCard={this.props.deleteFlashCard}
-                            params={this.props.params}/>
+                            subjectId={this.props.subject._id}
+                            userId={this.props.userId}/>
                         </div>
                     )
                     })

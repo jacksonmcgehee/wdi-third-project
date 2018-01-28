@@ -37,6 +37,10 @@ class FlashCardPreview extends Component {
         }
     }
 
+    updateFlashCard = (updatedCard) => {
+        
+    }
+
     render() {
     return (
         <ListContainer>
