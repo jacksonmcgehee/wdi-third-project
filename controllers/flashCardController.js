@@ -44,4 +44,27 @@ router.delete('/:flashcardId', (req, res) => {
         })
 })
 
+router.patch('/:flashcardId', (req, res) => {
+    const userId = req.params.userId
+    const subjectId = req.params.subjectId
+    const flashcardId = req.params.flashcardId
+    const updatedCard = req.body.flashCard
+    console.log('This is the req.body: ', req.body.flashCard)
+
+    User.findByIdAndUpdate(userId)
+    .then((user) => {
+        const subject = user.subjects.id(subjectId)
+        const cardToEdit = subject.flashCards.id(flashcardId)
+
+        cardToEdit.question = updatedCard.question
+        cardToEdit.answer = updatedCard.answer
+        return user.save()
+    })
+    .then((user) => {
+        const subject = user.subjects.id(subjectId)
+        res.json(subject.flashCards.id(flashcardId))
+    })
+
+})
+
 module.exports = router

@@ -67,6 +67,7 @@ class FlashCardPreview extends Component {
             <EditCardModal 
                     show={this.state.isOpenEditCard}
                     flashCard={this.state.flashCard}
+                    updateFlashCard={this.updateFlashCard}
                     toggleEditCardModal={this.toggleEditCardModal}/>
         </ListContainer>
     )
