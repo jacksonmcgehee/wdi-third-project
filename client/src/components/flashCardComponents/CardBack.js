@@ -14,7 +14,7 @@ class CardBack extends Component {
         
     return (
         <StyledCard>
-            Hello from the back of the card.
+            {this.props.currentCard.answer}
             <ButtonContainer>
                 <RightButton >Right</RightButton>
                 <WrongButton >Wrong</WrongButton>

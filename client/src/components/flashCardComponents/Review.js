@@ -13,13 +13,20 @@ import FlipButton from '../styledComponents/FlipButton'
 
 
 class Review extends Component {
+    constructor(){
+        super()
+        this.state = {
+            subject: {},
+            flashcards: [],
+            currentCard: {},
+            isOpenFront: true,
+            isOpenBack: false
+          }
 
-    state = {
-        subject: {},
-        flashcards: [],
-        isOpenFront: true,
-        isOpenBack: false
-      }
+        this.randomCard=this.randomCard.bind(this)
+    }
+
+    
 
     toggleCard = () => {
         this.setState({
@@ -35,9 +42,17 @@ class Review extends Component {
           axios.get(`/api/users/${userId}/subjects/${subjectId}`)
           .then(res => {
             this.setState({subject: res.data, flashcards: res.data.flashCards})
+          }).then(() => {
+              this.randomCard()
           })
         }
       }
+
+    randomCard () {
+            const flashcards = [...this.state.flashcards] 
+            const randomCard = flashcards[Math.floor(Math.random()*flashcards.length)]
+            this.setState({currentCard: randomCard})
+    }
 
     render() {
         const params = this.props.match.params
@@ -49,9 +64,13 @@ class Review extends Component {
                     <h2 className="header-text" >Due Point</h2>
                 </div>
                 <CardContainer>
-                    <CardFront show={this.state.isOpenFront} />
-                    <CardBack show={this.state.isOpenBack} />
+                    <CardFront show={this.state.isOpenFront} 
+                    currentCard={this.state.currentCard}
+                    />
+                    <CardBack show={this.state.isOpenBack} 
+                    currentCard={this.state.currentCard}/>
                     <FlipButton onClick={this.toggleCard} >Flip</FlipButton>
+                    <FlipButton onClick={this.randomCard} >Start</FlipButton>
                 </CardContainer>
                 
                 <BasicFooter>

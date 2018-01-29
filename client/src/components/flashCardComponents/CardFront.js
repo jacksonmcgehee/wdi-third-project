@@ -12,7 +12,7 @@ class CardFront extends Component {
         
     return (
         <StyledCard>
-            Hello from the front of the card.
+            {this.props.currentCard.question}
         </StyledCard>
     )
     }
