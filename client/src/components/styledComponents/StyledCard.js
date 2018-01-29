@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-const CardFront = styled.div`
+const StyledCard = styled.div`
     height: 300px;
     width: 500px;
     padding: 5px;
@@ -11,4 +11,4 @@ const CardFront = styled.div`
    
 `
 
-export default CardFront
+export default StyledCard
