@@ -9,7 +9,7 @@ const StyledCard = styled.div`
     text-align: center;
     color: #00B16A;
     display: grid;
-    grid-template-rows: 80% 20%;
+    grid-template-rows: 20% 60% 20%;
    
 `
 

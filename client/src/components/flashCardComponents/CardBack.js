@@ -7,8 +7,14 @@ import ButtonContainer from '../styledComponents/ButtonContainer'
 
 class CardBack extends Component {
 
+    // handleWrongClick () {
+    //     this.props.randomCard
+    //     this.props.toggleCard()
+
+    // }
+
     render() {
-        if(!this.props.show) {
+        if(this.props.show) {
             return null
           }
         
@@ -16,8 +22,8 @@ class CardBack extends Component {
         <StyledCard>
             {this.props.currentCard.answer}
             <ButtonContainer>
-                <RightButton >Right</RightButton>
-                <WrongButton >Wrong</WrongButton>
+                <RightButton onClick={this.props.rightCardRemove} >Right</RightButton>
+                <WrongButton onClick={this.props.randomCard}>Wrong</WrongButton>
             </ButtonContainer>
         </StyledCard>
     )
