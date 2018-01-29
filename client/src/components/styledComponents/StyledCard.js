@@ -10,6 +10,10 @@ const StyledCard = styled.div`
     color: #00B16A;
     display: grid;
     grid-template-rows: 20% 60% 20%;
+
+    @media (max-width: 500px) {
+    width: 300px;
+  }
    
 `
 

@@ -12,7 +12,7 @@ class CardFront extends Component {
         
     return (
         <StyledCard>
-            {this.props.currentCard.question}
+            <h2 className="card-title-text" >{this.props.currentCard.question}</h2>
         </StyledCard>
     )
     }

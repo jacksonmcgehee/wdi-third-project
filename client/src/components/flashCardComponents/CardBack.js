@@ -20,7 +20,7 @@ class CardBack extends Component {
         
     return (
         <StyledCard>
-            {this.props.currentCard.answer}
+            <h2 className="card-title-text" >{this.props.currentCard.answer}</h2>
             <ButtonContainer>
                 <RightButton onClick={this.props.rightCardRemove} >Right</RightButton>
                 <WrongButton onClick={this.props.randomCard}>Wrong</WrongButton>

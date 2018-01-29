@@ -5,7 +5,7 @@ const ButtonContainer = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
-    grid-row-start: 2;
+    grid-row-start: 3;
 
 `
 
