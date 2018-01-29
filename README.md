@@ -22,6 +22,8 @@
     - A more skeuomorphic UI for the flashcard review
     - Progressive Web App features so the flashcards can be reviewed offline
     - A way for users to share collections of flashcards with other users
+  - I used different syntax in places
+    - As I developed this app, I used various syntax to make sure I understood the variations. For example, in the same component or router, I used both .then and async/await versions of promises. **I understand this is not a good way to build production code**, but I wanted to use the project to improve my understanding of the syntax options. I have made comments in the code to explain my method.
 
   - Major takeaways:
     - **Mobile first is (still) hard**; I made progress on mobile first since my last project, but I still had issues. I wanted to fix some of the styling suggestions from the instructors for the second project. I had to do some trial and error styling because Google dev tools does not take into account the mobile browser tool bars for safari. I am sure there are still some issues for other mobile browsers. 
