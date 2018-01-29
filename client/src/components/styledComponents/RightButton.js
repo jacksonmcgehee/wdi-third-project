@@ -1,13 +1,13 @@
 import styled from 'styled-components'
 
-const FlipButton = styled.button`
+const RightButton = styled.button`
     height: 50px;
     width: 100px;
-    background-color: white;
-    color: #00B16A;
+    background-color: #00B16A;
+    color: #FDB40D;
     font-size: 25px;
     border: .75px solid #00B16A;
-    margin: 20px 5px;
+    margin: 10px 20px;
     -webkit-appearance: none;
     -webkit-border-radius: 0;
     border-radius: 0;
@@ -18,4 +18,4 @@ const FlipButton = styled.button`
   }
 `
 
-export default FlipButton
+export default RightButton

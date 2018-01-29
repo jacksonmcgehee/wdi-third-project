@@ -8,6 +8,8 @@ const StyledCard = styled.div`
     border: 1px solid #00B16A;
     text-align: center;
     color: #00B16A;
+    display: grid;
+    grid-template-rows: 80% 20%;
    
 `
 
