@@ -33,7 +33,9 @@ class UserPage extends Component {
     }
 
     async componentWillMount() {
+        console.log("The user page was called.")
         const response = await axios.get('/api/users')
+        console.log("The DB returned data:", response.data)
         this.setState({users: response.data})
     }
 
